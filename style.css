@@ -1,0 +1,1329 @@
+/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/*=============== VARIABLES CSS ===============*/
+:root {
+    --header-height: 3rem;
+    /*========== Colors ==========*/
+    --hue-color: 206;
+    --black-color: hsl(var(--hue-color), 4%, 4%);
+    --black-color-alt: hsl(var(--hue-color), 4%, 8%);
+    --title-color: hsl(var(--hue-color), 4%, 95%);
+    --text-color: hsl(var(--hue-color), 4%, 75%);
+    --text-color-light: hsl(var(--hue-color), 4%, 65%);
+    --white-color: #FFF;
+    --body-color: hsl(var(--hue-color), 4%, 6%);
+    --container-color: hsl(var(--hue-color), 4%, 10%);
+    --text-gradient: linear-gradient(hsl(var(--hue-color), 4%, 24%), hsl(var(--hue-color), 4%, 8%));
+    --scroll-thumb-color: hsl(var(--hue-color), 4%, 16%);
+    --scroll-thumb-color-alt: hsl(var(--hue-color), 4%, 20%);
+    /*========== Font and typography ==========*/
+    --body-font: 'Poppins', sans-serif;
+    --biggest-font-size: 5rem;
+    --bigger-font-size: 3.5rem;
+    --big-font-size: 2.5rem;
+    --h2-font-size: 1.25rem;
+    --h3-font-size: 1.125rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --smaller-font-size: .75rem;
+    --text-line-height: 2rem;
+    /*========== Font weight ==========*/
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    /*========== Margenes Bottom ==========*/
+    --mb-0-5: .5rem;
+    --mb-0-75: .75rem;
+    --mb-1: 1rem;
+    --mb-1-5: 1.5rem;
+    --mb-2: 2rem;
+    --mb-2-5: 2.5rem;
+    /*========== z index ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+@media screen and (min-width: 968px) {
+    :root {
+        --biggest-font-size: 7.5rem;
+        --bigger-font-size: 4.5rem;
+        --big-font-size: 4rem;
+        --h2-font-size: 1.5rem;
+        --h3-font-size: 1.25rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --smaller-font-size: .813rem;
+    }
+}
+
+/*=============== SCROLL BAR ===============*/
+::-webkit-scrollbar {
+    width: .60rem;
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-thumb-color);
+    border-radius: .5rem;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--scroll-thumb-color-alt);
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+body {
+    background-color: #0f0f10;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/*====================== base ======================*/
+a {
+    text-decoration: none;
+}
+
+.header {
+    margin: 0 194.5px;
+    margin-right: 194.5px;
+    height: 72px;
+    width: 68%;
+    position: fixed;
+    top: 0;
+    background-color: transparent;
+}
+
+/*===================== navbar ====================*/
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container a {
+    color: white;
+}
+
+.nav-logo {
+    margin-top: 10px;
+}
+
+.nav-logo img {
+    height: 32px;
+}
+
+.nav-menu {
+    display: inline;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.nav-item {
+    cursor: pointer;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+.nav-item:hover {
+    background: var(--white-color);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+@media screen and (max-width: 767px) {
+    .nav__menu {
+        position: fixed;
+        background-color: var(--body-color);
+        top: -100%;
+        left: 0;
+        width: 100%;
+        padding: 4rem 0 3rem;
+        transition: .4s;
+    }
+}
+
+.nav__toggle {
+    font-size: 1.2rem;
+    color: var(--white-color);
+    cursor: pointer;
+    display: none;
+}
+
+.nav__close {
+    display: none;
+    position: absolute;
+    font-size: 1.5rem;
+    top: 1rem;
+    right: 1rem;
+    color: var(--white-color);
+    cursor: pointer;
+}
+
+/* show menu */
+.show-menu {
+    top: 0;
+}
+
+/* Change background header */
+.scroll-header {
+    background-color: var(--body-color);
+}
+
+/* Active link */
+.active-link {
+    background: var(--white-color);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.section {
+    width: 100%;
+    margin-bottom: 4rem;
+}
+
+.section-title {
+    font-size: var(--bigger-font-size);
+    text-align: center;
+    margin-bottom: 2.5rem;
+    background: var(--text-gradient);
+    color: transparent;
+    -webkit-background-clip: text;
+    font-family: sans-serif;
+}
+
+/*================ Home Section ===============*/
+.home-container {
+    padding-left: 4rem;
+}
+
+.image>img {
+    height: 702.08px;
+    padding-left: 10rem;
+    width: auto;
+}
+
+.image>img {
+    margin-top: -11rem;
+    transition: 1s;
+}
+
+.home-data {
+    margin-top: -24rem;
+    float: right;
+    width: 52%;
+}
+
+.home-title {
+    margin-left: 4rem;
+    font-size: var(--biggest-font-size);
+    background: var(--text-gradient);
+    color: transparent;
+    -webkit-background-clip: text;
+}
+
+.home-subtitle {
+    color: white;
+    margin-top: -2rem;
+    margin-bottom: 3rem;
+    font-family: sans-serif;
+    font-size: var(--big-font-size);
+}
+
+.home-footer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    color: white;
+    font-family: sans-serif;
+}
+
+.home-title-description {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    margin-bottom: var(--mb-1);
+}
+
+.home-description {
+    width: 60%;
+    line-height: var(--text-line-height);
+    margin-bottom: var(--mb-2-5);
+    color: #bdc0c2;
+}
+
+/*=================== Home Button ======================*/
+.button {
+    cursor: pointer;
+    background-color: #0a0a0b;
+    width: 35%;
+    padding: 1rem 1.25rem;
+    height: 4rem;
+    border-radius: .5rem;
+    transition: .3s;
+    margin-bottom: 1rem;
+}
+
+.button:hover {
+    background-color: var(--black-color-alt);
+}
+
+.button--flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.button__icon {
+    font-size: 1.2rem;
+    padding-right: 1rem;
+}
+
+.home-price {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-semi-bold);
+    margin-left: var(--mb-0-75);
+}
+
+/*=================== Sponsor Section =============*/
+.sponsor-container {
+    transform: translateY(-4rem);
+    width: 100%;
+    padding-top: 10rem;
+    padding-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sponsor-container img {
+    height: 2rem;
+    padding-right: 10rem;
+}
+
+.sponsor-container img:nth-child(4) {
+    padding-right: 0;
+}
+
+/*================ Specs Section =================*/
+.specs {
+    width: 100%;
+    color: white;
+}
+
+.specs-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.specs-alldata {
+    margin-left: 27rem;
+}
+
+.specs-data {
+    padding-bottom: 2rem;
+    width: 10rem;
+}
+
+.specs-data:nth-child(1),
+.specs-data:nth-child(4) {
+    margin-left: 2rem;
+}
+
+.specs-data i,
+.specs-title {
+    display: inline-block;
+    width: 100%;
+    padding-bottom: 0.5rem;
+}
+
+.specs-title {
+    font-size: var(--normal-font-size);
+    font-weight: var(--font-semi-bold);
+}
+
+.specs-data i {
+    font-size: 1.2rem;
+}
+
+.specs-subtitle {
+    width: 100%;
+    color: #bdc0c2;
+    font-size: var(--smaller-font-size);
+}
+
+.specs-img img {
+    width: 19rem;
+    float: right;
+    margin-top: -25rem;
+    margin-right: 23rem;
+}
+
+/*================= Case section =================*/
+.case-data {
+    display: flex;
+    justify-content: center;
+    column-gap: 5rem;
+}
+
+.case-data img {
+    width: 19rem;
+}
+
+.case-description {
+    color: #bdc0c2;
+    margin-top: 8rem;
+    float: right;
+    width: 16%;
+    line-height: var(--text-line-height);
+    height: 50%;
+}
+
+.button-case {
+    color: white;
+    width: 9.5rem;
+    height: 3.7rem;
+    font-weight: 500;
+    float: right;
+    margin-top: 19rem;
+    margin-left: -18.5rem;
+}
+
+/*================= Discount Section ================*/
+.discount {
+    color: white;
+}
+
+.discount-title {
+    padding-top: 1rem;
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-1);
+    width: 77%;
+    line-height: var(--text-line-height);
+}
+
+.discount-content {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 3rem 5rem 3rem 5rem;
+    margin: 0 12rem 0 12rem;
+    background-color: var(--scroll-thumb-color);
+    border-radius: 0.5rem;
+}
+
+.discount-description {
+    color: #bdc0c2;
+}
+
+.button-discount {
+    width: 10rem;
+    height: 3.7rem;
+    margin-top: 2rem;
+}
+
+.discount-image {
+    height: 15rem;
+}
+
+/*=============== Product Section ============*/
+.product-section-title {
+    margin-bottom: 5rem;
+}
+
+.allproducts {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 24rem;
+    margin-right: 22rem;
+}
+
+.products-container {
+    margin-left: 2rem;
+    margin-bottom: 6rem;
+    color: white;
+    padding: 0.9rem;
+    background-color: #181a1b;
+    height: 10rem;
+    border-radius: 0.5rem;
+}
+
+.product5 {}
+
+.product-image {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    height: 8rem;
+    margin-top: -4rem;
+}
+
+.product-title {
+    margin-top: 1rem;
+    font-size: var(--small-font-size);
+    color: var(--title-color);
+    padding-bottom: 0.7rem;
+}
+
+.product-price {
+    display: inline-block;
+    color: #bdc0c2;
+    font-size: var(--small-font-size);
+}
+
+.product-button {
+    height: 1rem;
+    width: 1rem;
+    justify-content: center;
+    float: right;
+    margin-top: -0.5rem;
+}
+
+/*================== Footer =================*/
+.footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-logo {
+    margin-left: 194.5px;
+}
+
+.footer-products {
+    width: 7rem;
+    display: inline-block;
+}
+
+.footer-product-title {
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-product {
+    margin-bottom: 0.5rem;
+    display: inline-block;
+    color: #bdc0c2;
+    text-decoration: none;
+}
+
+.footer-supports {
+    width: 7rem;
+    display: inline-block;
+}
+
+.footer-support-title {
+    margin-bottom: 1rem;
+    font-size: var(--h3-font-size);
+    font-weight: var(--font-medium);
+    color: white;
+}
+
+.footer-support {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    color: #bdc0c2;
+    text-decoration: none;
+}
+
+.footer-social {
+    display: inline-block;
+    display: flex;
+    flex-direction: row;
+}
+
+.footer-input {
+    border-radius: 0.5rem;
+    padding-top: 1rem;
+    width: 21rem;
+    background-color: #181a1b;
+    margin-bottom: 2rem;
+}
+
+#email {
+    padding-left: 0.5rem;
+    border: none;
+    background-color: transparent;
+    height: 2.6rem;
+    color: #bdc0c2;
+    width: 10.5rem;
+}
+
+.footer-subscribe {
+    border: none;
+    padding: 0;
+    color: white;
+    display: inline-block;
+    height: 2.6rem;
+    width: 9rem;
+}
+
+.button-footer {
+    color: white;
+    justify-content: center;
+    width: 0.3rem;
+    height: 2rem;
+    margin-right: 1rem;
+    background-color: #181a1b;
+}
+
+.footer-input-social {
+    display: inline-block;
+    margin-right: 194.5px;
+}
+
+.footer-copyright {
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-top: 144px;
+    margin-bottom: 2rem;
+}
+
+.footer-copyright>a {
+    color: #bdc0c2;
+    text-decoration: none;
+}
+
+/*====================== Media Queries =====================*/
+@media screen and (max-width: 1041px) {
+    .header {
+        margin: 0 154.5px;
+    }
+
+    .home-button {
+        width: 40%;
+    }
+
+    .image>img {
+        height: 597.08px;
+        padding-left: 6rem;
+    }
+
+    .home-title {
+        margin-top: 4rem;
+        padding-bottom: 1rem;
+    }
+
+    .home-description {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 938px) {
+    .image>img {
+        height: 535.08px;
+    }
+
+    .home-title {
+        margin-top: 11rem;
+    }
+}
+
+@media screen and (max-width: 989px) {
+    .home-button {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 758px) {
+    .header {
+        margin: 0 72.5px;
+    }
+
+    .image>img {
+        height: 431.08px;
+        padding-left: 4rem;
+    }
+
+    .home-title {
+        margin-top: 15rem;
+    }
+}
+
+@media screen and (max-width: 731px) {
+    .home-button {
+        width: 59%;
+    }
+}
+
+@media screen and (max-width: 674px) {
+    .home-title {
+        margin-left: 0;
+    }
+
+    .home-button {
+        width: 61%;
+    }
+
+    .image>img {
+        padding-left: 1rem;
+    }
+
+}
+
+@media screen and (max-width: 610px) {
+    .home-button {
+        width: 66%;
+    }
+}
+
+@media screen and (max-width: 569px) {
+    .home-button {
+        width: 74%;
+    }
+}
+
+@media screen and (max-width: 552px) {
+    .home-data {
+        width: 55%;
+    }
+
+    .home-description {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 524px) {
+    .home-data {
+        padding-left: 2rem;
+    }
+
+    .home-title {
+        font-size: 4rem;
+    }
+
+    .home-subtitle {
+        font-size: 2rem;
+    }
+
+    .home-button {
+        width: 88%;
+    }
+}
+
+@media screen and (max-width: 490px) {
+    .home-title {
+        font-size: 3rem;
+        padding-bottom: 1.5rem;
+    }
+
+    .home-subtitle {
+        font-size: 1.5rem;
+    }
+
+    .home-description {
+        line-height: normal;
+    }
+
+    .home-button {
+        width: 98%;
+    }
+}
+
+/* Samsung Glaxy A51/71 */
+@media screen and (max-width: 412px) {
+    .image>img {
+        height: 325.08px;
+        padding-left: 0;
+        margin-left: -2rem;
+        margin-top: -5rem;
+    }
+
+    .home-data {
+        padding-left: 0;
+        margin-top: -26rem;
+    }
+
+    .header {
+        margin: 0 28.5px
+    }
+
+    .sponsor-spotify,
+    .sponsor-amazon {
+        display: none;
+    }
+
+    .sponsor-container>img {
+        padding-right: 6rem;
+    }
+
+    .specs-alldata {
+        margin-left: 1rem;
+    }
+
+    .specs-img>img {
+        margin-right: 5px;
+        width: 17rem;
+    }
+
+    .case-data>img {
+        width: 11rem;
+        margin-left: 2rem;
+        height: 100%;
+    }
+
+    .case-description {
+        line-height: normal;
+        width: 34%;
+        margin-top: 3rem;
+        margin-left: -3rem;
+    }
+
+    .case-data {
+        justify-content: flex-start;
+    }
+
+    .button-case {
+        margin-top: 10rem;
+        margin-left: -14.5rem;
+    }
+
+    .discount-content {
+        margin: 0 1rem 0 1rem;
+    }
+
+    .discount-header {
+        margin-left: -4rem;
+    }
+
+    .discount-image {
+        height: 8rem;
+        margin-top: 1rem;
+    }
+
+    .discount-title {
+        width: 106%;
+    }
+
+    .allproducts {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .footer-logo {
+        margin-left: 67.5px;
+    }
+
+    .footer-products {
+        margin-left: 4rem;
+    }
+
+    .footer-supports {
+        margin-left: 3rem;
+    }
+
+    .footer-input-social {
+        margin-top: 194.5px;
+        margin-left: -21rem;
+        margin-right: 2rem;
+    }
+}
+
+
+/*================ Glaxy Fold ===========*/
+@media screen and (max-width: 280px) {
+    .image>img {
+        height: 235.08px;
+    }
+
+    .home-title {
+        font-size: 2rem;
+        margin-top: 20rem;
+    }
+
+    .home-subtitle {
+        font-size: 1rem;
+    }
+
+    .home-footer {
+        padding-top: 1rem;
+        margin-left: -9rem;
+        width: 115%
+    }
+
+    .home-title-description {
+        width: 100%;
+        text-align: end;
+    }
+
+    .home-description {
+        width: 190%;
+        margin-bottom: 1rem;
+    }
+
+    .home-button {
+        width: 130%;
+    }
+
+    .sponsor-container>img {
+        padding-right: 3rem;
+    }
+
+    .sponsor-container>img {
+        height: 1.5rem;
+    }
+
+    .sponsor-container {
+        padding-bottom: 0;
+    }
+
+    .specs-img>img {
+        margin-top: -21rem;
+        width: 11rem;
+    }
+
+    .specs-data {
+        padding-bottom: 1rem;
+    }
+
+    .case-data>img {
+        width: 6rem;
+    }
+
+    .case-description {
+        width: 49%;
+        margin-top: 1rem;
+        margin-left: -4rem;
+    }
+
+    .button-case {
+        margin-top: 10rem;
+        margin-left: -18.5rem;
+    }
+
+    .discount-image {
+        height: 10rem;
+        margin-top: 1rem;
+        margin-left: -11rem;
+    }
+
+    .discount-header {
+        margin-top: 10rem;
+        margin-left: 1rem;
+    }
+
+    .discount-title {
+        padding-top: 2rem;
+    }
+
+    .footer-logo {
+        margin-top: 0px;
+    }
+
+    .footer-logo {
+        margin-left: 5.5px;
+    }
+
+    .footer-products {
+        margin-left: -2rem;
+    }
+
+    .footer-supports {
+        margin-left: -4rem;
+    }
+
+    .footer-input {
+        width: 14rem;
+    }
+
+    #email {
+        padding-left: 0.5rem;
+        width: 6.5rem;
+    }
+
+    .button__icon {
+        padding-right: 0.5rem;
+    }
+
+    .footer-subscribe {
+        height: 2rem;
+        width: 7rem;
+    }
+}
+
+/* Surface Duo */
+@media screen and (max-width: 540px) {
+    .sponsor-apple {
+        display: none;
+    }
+
+    .sponsor-container>img {
+        padding-right: 8rem;
+    }
+
+    .sponsor-spotify {
+        margin-left: 8rem;
+    }
+
+    .specs-img>img {
+        margin-right: 11rem;
+        margin-left: 2rem;
+    }
+
+    .case-description {
+        margin-right: 0rem;
+        margin-top: 5rem;
+        width: 29%;
+    }
+
+    .button-case {
+        margin-left: -15.5rem;
+    }
+
+    .discount-content {
+        margin: 0 -4rem 0 3rem;
+    }
+
+    .allproducts {
+        margin-left: 7rem;
+        margin-right: 0rem;
+    }
+
+    .product-section-title {
+        width: 126%;
+    }
+
+    .footer-logo {
+        margin-left: 20.5px;
+    }
+
+    .footer-products {
+        margin-left: 2rem;
+    }
+
+    .footer-supports {
+        margin-left: 2rem;
+    }
+
+    .footer-input-social {
+        margin-left: 2rem;
+    }
+}
+
+@media screen and (max-width: 912px) {
+    .discount-content {
+        width: 100%;
+        padding: 5rem 5rem 5rem 5rem;
+        margin: 0rem 5rem 0 8rem;
+    }
+
+    .allproducts {
+        margin-left: 17rem;
+        margin-right: 3rem;
+    }
+
+    .footer-products {
+        margin-left: 7rem;
+    }
+
+    .footer-supports {
+        margin-left: 7rem;
+    }
+
+    .footer-input-social {
+        margin-left: 7rem;
+    }
+
+    .specs-img>img {
+        margin-right: 8rem;
+    }
+
+    .specs-alldata {
+        margin-left: 16rem;
+    }
+
+    .sponsor-container img {
+        padding-right: 7rem;
+    }
+}
+
+/*============== Ipad pro ==============*/
+@media screen and (max-width: 1024px) {
+    .specs-alldata {
+        margin-left: 19rem;
+    }
+
+    .specs-img>img {
+        margin-right: 14rem;
+    }
+
+    .allproducts {
+        margin-left: 13rem;
+        margin-right: 13rem;
+    }
+
+    .footer-logo {
+        margin-left: 134.5px;
+    }
+
+    .footer-input-social {
+        margin-right: 112.5px;
+    }
+}
+
+@media screen and (max-width: 820px) {
+    .specs-img>img {
+        margin-right: 9rem;
+    }
+
+    .specs-alldata {
+        margin-left: 13rem;
+    }
+
+    .case-description {
+        margin-top: 5rem;
+        width: 28%;
+    }
+
+    .discount-content {
+        width: 90%;
+        margin: 0rem 0rem 0 2rem;
+    }
+
+    .footer-products {
+        margin-left: 4rem;
+    }
+
+    .footer-supports {
+        margin-left: 4rem;
+    }
+
+    .footer-input-social {
+        margin-left: 4rem;
+    }
+
+    .footer-logo {
+        margin-left: 60.5px;
+    }
+}
+
+/*============= Ipad Mini ===============*/
+@media screen and (max-width: 768px) {
+    .allproducts {
+        margin-left: 12rem;
+        margin-right: 9rem;
+    }
+}
+
+/*============= Samsung Glaxy S20 Ultra ==========*/
+@media screen and (max-width: 412px) {
+    .sponsor-apple {
+        display: block;
+    }
+
+    .specs-img>img {
+        margin-right: 2rem;
+        width: 14rem;
+    }
+
+    .specs-alldata {
+        margin-left: 3rem;
+    }
+
+    .case-description {
+        margin-top: 2rem;
+        width: 39%;
+    }
+
+    .discount-content {
+        width: 87%;
+        padding: 3rem 5rem 3rem 5rem;
+    }
+
+    .discount-header {
+        margin-left: 1rem;
+    }
+
+    .product-section-title {
+        width: 101%;
+    }
+
+    .allproducts {
+        margin-left: 0rem;
+        margin-right: 1rem;
+    }
+
+    .footer-input-social {
+        margin-left: -20rem;
+        margin-top: 13rem;
+    }
+}
+
+/*================== Samsung Glaxy S8+ =============*/
+@media screen and (max-width: 360px) {
+    .home-button {
+        width: 109%;
+    }
+
+    .sponsor-apple {
+        margin-left: 2rem;
+    }
+
+    .specs-img>img {
+        margin-right: -1rem;
+    }
+
+    .discount-content {
+        width: 99%;
+        margin: 0rem 0rem 0 1rem;
+    }
+
+    .discount-image {
+        height: 7rem;
+    }
+
+    .allproducts {
+        margin-left: -0.5rem;
+        margin-right: -4rem;
+    }
+
+    .product-section-title {
+        width: 107%;
+    }
+
+    .footer-logo {
+        margin-left: 34.5px;
+    }
+}
+
+/*================== Iphone 14 pro max =============*/
+@media screen and (max-width: 430px) {
+    .home-button {
+        width: 103%;
+    }
+
+    .image>img {
+        padding-left: 0rem;
+    }
+
+    .sponsor-spotify {
+        display: none;
+    }
+
+    .specs-alldata {
+        margin-left: 3rem;
+    }
+
+    .specs-img>img {
+        margin-right: 1rem;
+        width: 15rem;
+    }
+
+    .case-data img {
+        width: 13rem;
+        height: 100%;
+    }
+
+    .case-description {
+        margin-top: 2rem;
+        width: 36%;
+        margin-left: -3rem;
+    }
+
+    .button-case {
+        margin-top: 13rem;
+    }
+
+    .discount-image {
+        height: 8rem;
+    }
+
+    .discount-content {
+        padding: 3rem 5rem 3rem 5rem;
+    }
+
+    .product-section-title {
+        width: 103%;
+    }
+
+    .allproducts {
+        margin-left: 1rem;
+        margin-right: 2rem;
+    }
+
+    .footer-input-social {
+        margin-left: -20rem;
+        margin-top: 13rem;
+    }
+}
+
+/*================== Iphone 12 pro =============*/
+@media screen and (max-width: 390px) {
+    .case-description {
+        margin-right: 3rem;
+    }
+
+    .discount-image {
+        height: 7rem;
+    }
+
+    .allproducts {
+        margin-left: -0.5rem;
+        margin-right: -1rem;
+    }
+
+    .footer-logo {
+        margin-left: 41.5px;
+    }
+}
+
+/*============== Iphone XR ==============*/
+@media screen and (max-width: 414px) {
+    .home-button {
+        width: 109%;
+    }
+
+    .discount-content {
+        width: 89%;
+    }
+
+    .allproducts {
+        margin-left: 0rem;
+        margin-right: 2rem;
+    }
+
+    .footer-logo {
+        margin-left: 50.5px;
+    }
+}
+
+/*============== Iphone SE ==============*/
+@media screen and (max-width: 375px) {
+    .specs-img>img {
+        margin-right: 1rem;
+        width: 13rem;
+    }
+
+    .discount-content {
+        width: 92%;
+        margin: 0rem 0rem 0 1rem;
+    }
+
+    .allproducts {
+        margin-left: -1rem;
+        margin-right: -1rem;
+    }
+
+    .footer-logo {
+        margin-left: 28.5px;
+    }
+}
